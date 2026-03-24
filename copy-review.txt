@@ -1,0 +1,205 @@
+PARABOLE IMPACT REPORT 2024–2025 — ALL COPY
+=============================================
+
+
+HERO
+----
+Title: Impact report '24-'25
+
+Intro: Parabole is a communications studio built entirely around data storytelling. We work with mission-driven organisations and select private-sector partners to turn data into narratives that drive decisions—from editorial strategy to final production.
+
+Bold: This is our impact report for 2024–2025: two years of turning valuable data into real-world influence. 
+
+
+═══════════════════════════════════════════════
+01 CREATE
+═══════════════════════════════════════════════
+
+Chapter intro: Every project starts with data that's locked in a spreadsheet, a technical report or an internal system. Here's what we did with it.
+
+Tags label: Sectors
+Tags: Non-profit · International Development · Human Rights · Tech · Public Policy · Health · Finance
+
+
+CARD: Reach (yellow)
+  Label: reach
+  Stat: 50
+  Headline: projects
+  Detail: 50 projects across non-profit, tech, public policy, health and more. From one-off microsites to multi-year strategic partnerships, here's what we worked on.
+  Bar chart:
+    Trainings — 18
+    Microsites — 13
+    Infographics — 8
+    Reports — 5
+    Strategy — 4
+    Platforms — 3
+
+
+CARD: DEI Progress Report (cool gray, clickable)
+  Label: Case study
+  Headline: DEI Progress Report
+  Detail: We worked with Vinted to bring their data on DEI to life, using a unique storytelling and design approach.
+
+  POPUP:
+    Title: DEI Progress Report
+    Description: We worked with Vinted to bring their data on DEI to life, using a unique storytelling and design approach.
+    ---
+    Background: Vinted needed to publish workforce diversity data in a way that held up to public scrutiny, without flattening the nuance or turning complexity into corporate platitudes. We designed the full report, working closely with the DEI team to find a visual language that captured Vinted's voice while treating sensitive data with care.
+    Impact: The report is now used across the company for stakeholder communication and internal transparency. The client called it a "captivating design" that "perfectly captures Vinted's voice.
+    [image placeholder]
+    Button: VIEW PROJECT → https://www.parabole.studio/project/dei-progress-report
+
+
+CARD: The Trillions Tracker (cool gray, clickable)
+  Label: Case study
+  Headline: The Trillions Tracker
+  Detail: We developed an interactive data visualisation for ONE Campaign to track progress in global financing for People and Planet, launched at the UNGA.
+
+  POPUP:
+    Title: The Trillions Tracker
+    Description: We developed an interactive data visualisation for ONE Campaign to track progress in global financing for People and Planet, launched at the UNGA.
+    ---
+    Background: Tracking global progress on development financing is notoriously messy: different data sources, inconsistent reporting, huge figures with little context. The ONE Campaign spent months consolidating the numbers into a coherent picture and needed a way to present it that could work both on stage at the UN General Assembly and online for a global audience.
+    Impact: We designed the full visual experience, from an animated interactive graphic for the web to a printed handout with QR code for UNGA attendees. The Trillions Tracker was presented live at UNGA in September 2024 to mark ONE Campaign's 20th anniversary.
+    [image placeholder]
+    Button: VIEW PROJECT → https://www.parabole.studio/project/the-trillions-tracker
+
+
+CARD: Trust (light yellow)
+  Label: trust
+  Stat: 63%
+  Headline: repeat clients
+  [visual placeholder area]
+
+
+═══════════════════════════════════════════════
+02 CONNECT
+═══════════════════════════════════════════════
+
+Chapter intro: The work doesn't stop at delivery. It ripples outward through the community we're building, the people we teach and the stories we tell without a client brief.
+
+Tags label: Expertise
+Tags: Storytelling · Data visualisation · Web development · UX/UI design · Motion & animation · Graphic & web design
+
+
+CARD: Network (moss)
+  Label: network
+  Stat: 14
+  Headline: countries
+  Detail: Our partners and collaborators span 14 countries and 6 continents. Each project is shaped by the context it's designed for.
+  [map placeholder]
+
+
+CARD: Writing (sage, clickable)
+  Label: writing
+  Stat: 4.1K+
+  Headline: newsletter subscribers
+
+  POPUP:
+    Title: 4.1K+ newsletter subscribers
+    Description: The Plot (→ https://www.theplot.media/), our newsletter on data communication, covers topics from chart design to narrative strategy. Here are three reader favourites.
+    ---
+    Reader favourites:
+      10,000 hours — May 2025 (→ https://www.theplot.media/p/10000-hours)
+      The tips I give to people starting in dataviz — Sep 2022 (→ https://www.theplot.media/p/tipsforbeginners)
+      Data without numbers — Apr 2025 (→ https://www.theplot.media/p/qualitative-data)
+
+
+CARD: Speaking (lake/dark, clickable)
+  Label: speaking
+  Headline: On stages and in conversations
+  Detail: We share our experience and knowledge on data communication through talks, panels and podcasts.
+
+  POPUP:
+    Title: On stages and in conversations
+    Description: We share our experience and knowledge on data communication through talks, panels and podcasts.
+    ---
+      Talk at 2CO4 Barcelona: Measure to change — July 2024 (→ https://2coconference.org/2024/program/)
+      Explore Explain Podcast: State of Data Viz — Dec 2024 (→ https://visualisingdata.com/2024/12/explore-explain-s5-e7-e8-the-state-of-data-viz-special-webinar/)
+
+
+CARD: Training (sage, clickable)
+  Label: training
+  Stat: 540+
+  Headline: training participants
+
+  POPUP:
+    Title: 540+ training participants
+    Description: We equip teams to own their organisation's data narrative. We ran workshops across UN agencies, tech companies, and NGOs, plus a public cohort on Maven.
+    ---
+      Public data storytelling bootcamp — Maven
+      Data visualisation for public policy — Sciences Po
+      Private data storytelling trainings — 10+ clients
+
+
+CARD: Pro bono (white/paper)
+  Label: pro bono
+  Headline: All datasets deserve a voice
+  Detail: In 2025, we launched Parabole Originals: pro bono data stories on topics that matter but don't get enough attention. 
+
+
+CARD: The Prevention Gap (cool gray, clickable)
+  Label: Case study
+  Headline: The Prevention Gap
+  Detail: This piece dives into the why and the how of one of the most common fetal anomalies, using a personal story, illustrations and data visualisation.
+
+  POPUP:
+    Title: The Prevention Gap
+    Description: This piece dives into the why and the how of one of the most common fetal anomalies, using a personal story, illustrations and data visualisation.
+    ---
+    Background: Up to 1 in 1,000 pregnancies are affected by spina bifida, yet most people have never heard of it. The risk can be significantly reduced through folic acid supplementation, but policy and awareness haven't kept pace.
+    Impact: This is the first Parabole Original. We used personal storytelling, illustration and data to make the case for prevention, reaching 2k+ views across 50+ countries.
+    [image placeholder]
+    Button: VIEW PROJECT → https://www.parabole.studio/project/the-prevention-gap
+
+
+═══════════════════════════════════════════════
+03 CONVERGE
+═══════════════════════════════════════════════
+
+Chapter intro: Behind every project is a way of working, and behind that, a bigger ambition. Here's the method, the metric and where we're heading.
+
+
+CARD: Vision (honey, full width)
+  Label: Vision
+  Headline: We make sure important data reaches the people who need to act on it.
+
+
+CARD: North Star (almond)
+  Label: North star
+  Stat: 30
+  Headline: datasets 
+  Detail: We're setting ourselves a goal: unlock 30 datasets every two years. Each one of them should go from inaccessible to understood by the people who need it.
+
+
+CARD: Progress (almond)
+  Label: progress
+  Stat: 27/30
+  Headline: datasets unlocked
+  Detail: In 2024–2025, we unlocked 27 datasets across 7 sectors. That's how we measured up against our first north-star target of 30, and where we'll be building from next.
+  [circular dot chart: 27 filled, 3 empty, 8-pointed star center]
+
+
+CARD: Approach (paper, clickable)
+  Label: Approach
+  Headline: Strategy first, execution second
+  Detail: Every project starts with a question: who needs to understand this, and what should change as a result?
+
+  POPUP:
+    Title: Strategy first, execution second
+    Description: Every project starts with a question: who needs to understand this, and what should change as a result?
+    ---
+	We split every engagement into two clear stages. First, we define the narrative strategy: the audience, the key message, the right format, the editorial angle. Only once that's agreed do we move into production.
+	This is what makes us a strategic partner rather than a production studio. We're in the room when the brief is being shaped, not just when the design is being made. That early involvement is where the most important decisions happen.
+
+CARD: Milestone (lake/dark)
+  Label: Milestone
+  Headline: Parabole Austin
+  Detail: We've established a subsidiary in the US. It signals something we've been building toward: a company that operates internationally by design, not by accident.
+
+
+═══════════════════════════════════════════════
+FOOTER
+═══════════════════════════════════════════════
+
+© 2026 Parabole Studio · parabole.studio (→ https://www.parabole.studio)

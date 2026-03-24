@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parabole — Impact Report 2024–2025</title>
+<style>
+  /* ═══ FONTS ═══ */
+  @font-face { font-family: 'Safiro'; src: url('Safiro-Regular.otf') format('opentype'); font-weight: 400; }
+  @font-face { font-family: 'Safiro'; src: url('Safiro-Medium.otf') format('opentype'); font-weight: 500; }
+  @font-face { font-family: 'Safiro'; src: url('Safiro-SemiBold.otf') format('opentype'); font-weight: 600; }
+  @font-face { font-family: 'Safiro'; src: url('Safiro-Bold.otf') format('opentype'); font-weight: 700; }
+  @font-face { font-family: 'Simplon Mono'; src: url('SimplonMono-Regular.otf') format('opentype'); font-weight: 400; }
+  @font-face { font-family: 'Simplon Mono'; src: url('SimplonMono-Medium.otf') format('opentype'); font-weight: 500; }
+  @font-face { font-family: 'Simplon Mono'; src: url('SimplonMono-Bold.otf') format('opentype'); font-weight: 700; }
+
+  /* ═══ TOKENS (from Figma) ═══ */
+  :root {
+    --yellow: #E2C641;
+    --light-yellow: #f9efc3;
+    --paper: #F5F3EE;
+    --off-black: #262626;
+    --grey-10: #262626;
+    --moss: #B5BCA6;
+    --sage: #e1e6d7;
+    --warm-gray: #E7E4D7;
+    --pale-green: #DDD9B5;
+    --honey: #D0AA71;
+    --almond: #EEDECB;
+    --cool-gray: #c9cecd;
+    --lake: #4A5150;
+    --bg: #262626;
+    --surface: var(--off-black);
+    --text: var(--paper);
+    --text-muted: #9a948a;
+    --border: rgba(245,243,238,0.12);
+    --r: 12px;
+    --r-sm: 8px;
+    --gap: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Safiro', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══ LAYOUT ═══ */
+  .page { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Hero ── */
+  .hero { padding: 60px 0 40px; }
+  .hero-logo { margin-bottom: 72px; }
+  .hero-logo img { height: 28px; width: auto; }
+  .hero-body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .hero h1 {
+    font-family: 'Safiro', sans-serif;
+    font-size: 57.6px;
+    font-weight: 700;
+    line-height: 62.21px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+  .hero-right { padding-top: 4px; }
+  .hero-right p {
+    font-family: 'Safiro', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0px;
+    color: var(--text-muted);
+  }
+  .hero-right p + p { margin-top: 14px; }
+  .hero-right strong {
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  /* ═══ TAB ROW ═══ */
+  .tab-row {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+  }
+
+  .tab-row-inner {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+  }
+
+  .tab-btn {
+    font-family: 'Simplon Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    flex: 0 1 auto;
+  }
+
+  .tab-btn.active {
+    background: var(--paper);
+    color: #262626;
+    border-radius: 8px 8px 0 0;
+  }
+
+  /* ═══ CONTENT ZONE ═══ */
+  .content-zone {
+    background: var(--paper);
+    min-height: 60vh;
+  }
+
+  .tab-panel {
+    display: none;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* ── Chapter title in content zone ── */
+  .tab-panel .chapter-title {
+    font-family: 'Safiro', sans-serif;
+    font-size: 44.8px;
+    font-weight: 700;
+    line-height: 44.8px;
+    color: #262626;
+    margin-bottom: 24px;
+  }
+
+  /* ── Chapter ── */
+  .chapter { margin-bottom: 64px; }
+  .chapter-header { margin-bottom: 24px; }
+  .chapter-header-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; gap: 24px;
+  }
+  .chapter-header-bottom {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 24px;
+  }
+  .ch-title-row { display: flex; align-items: baseline; gap: 8px; }
+  .ch-num {
+    font-family: 'Safiro', sans-serif;
+    font-size: 44.8px; font-weight: 700;
+    line-height: 44.8px;
+    color: #262626;
+  }
+  .ch-title {
+    font-family: 'Safiro', sans-serif;
+    font-size: 44.8px; font-weight: 400;
+    line-height: 44.8px;
+    color: #262626;
+  }
+  .ch-line { width: 100%; height: 1px; background: rgba(38,38,38,0.1); margin: 14px 0; }
+  .ch-intro {
+    font-family: 'Safiro', sans-serif;
+    font-size: 14.7px; font-weight: 400;
+    line-height: 23.55px;
+    color: #262626;
+    max-width: 460px;
+  }
+
+  .ch-tags-area { flex-shrink: 0; text-align: right; max-width: 420px; }
+  .ch-tags-label {
+    font-family: 'Simplon Mono', monospace;
+    font-size: 10.4px; font-weight: 400;
+    letter-spacing: 1.04px; text-transform: uppercase;
+    color: #262626; margin-bottom: 10px;
+  }
+
+  /* ═══ SECTION GRID ═══ */
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+  }
+
+  /* ═══ CARD ═══ */
+  .card {
+    border-radius: var(--r); padding: 22px 24px;
+    position: relative; overflow: visible;
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+  }
+  .card--click { cursor: pointer; }
+  .card--click:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+  .card:not(.card--click):hover { transform: none; box-shadow: none; }
+  .card--full { grid-column: span 2; }
+
+  /* ── Card colors (exact Figma values) ── */
+  .card--yellow       { background: var(--yellow); color: var(--off-black); }
+  .card--light-yellow { background: var(--light-yellow); color: var(--off-black); }
+  .card--honey        { background: var(--honey); color: var(--off-black); }
+  .card--moss         { background: var(--moss); color: var(--off-black); }
+  .card--sage         { background: var(--sage); color: var(--off-black); }
+  .card--almond       { background: var(--almond); color: var(--off-black); }
+  .card--cool-gray    { background: var(--cool-gray); color: var(--off-black); }
+  .card--lake         { background: var(--lake); color: #F5F3EE; }
+  .card--white        { background: #F5F3EE; color: var(--grey-10); }
+
+  /* ── Card inner elements (Figma typography) ── */
+  .c-label-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .c-icon {
+    width: 24.43px; height: 24.43px; border-radius: 5px;
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .c-icon svg { width: 14px; height: 14px; }
+
+  .c-label {
+    font-family: 'Simplon Mono', monospace;
+    font-size: 10.4px; font-weight: 400;
+    letter-spacing: 1.04px;
+    text-transform: uppercase;
+  }
+  .c-headline {
+    font-family: 'Safiro', sans-serif;
+    font-size: 18.4px; font-weight: 700;
+    line-height: 22px;
+  }
+  .c-stat {
+    font-family: 'Safiro', sans-serif;
+    font-size: 44.8px; font-weight: 700;
+    line-height: 44.8px;
+    letter-spacing: 0px;
+  }
+  .c-stat-unit {
+    font-family: 'Safiro', sans-serif;
+    font-weight: 400;
+  }
+  .c-detail {
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; font-weight: 400;
+    line-height: 20.34px;
+    margin-top: 8px;
+  }
+  .c-tags { display: flex; flex-wrap: wrap; gap: 3px; justify-content: flex-end; }
+  .c-tag {
+    font-family: 'Safiro', sans-serif;
+    font-size: 10.4px; font-weight: 400;
+    letter-spacing: 0.312px;
+    padding: 4px 11px; border-radius: 100px;
+    border: 1px solid rgba(38,38,38,0.12);
+    color: #262626;
+    height: 23.61px;
+    display: inline-flex; align-items: center;
+  }
+
+  /* Card split: stat left, description right */
+  .card-split { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; }
+  .card-split .c-stat { white-space: nowrap; }
+
+  /* ── Expand tab (Figma: blends into card top-right corner) ── */
+  .c-expand-tab {
+    position: absolute;
+    top: 0; right: -24px;
+    width: 37px; height: 20px;
+    border-radius: 0 12px 12px 0;
+    display: flex; align-items: center;
+    justify-content: flex-end;
+    padding-right: 7px;
+  }
+  .c-expand-tab svg { width: 10px; height: 10px; }
+  /* Left-side tab variant */
+  .c-expand-tab--left {
+    right: auto; left: -24px;
+    border-radius: 12px 0 0 12px;
+    justify-content: flex-start;
+    padding-right: 0; padding-left: 7px;
+  }
+
+  /* ── Modal popup overlay ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,26,26,0.5);
+    z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-popup {
+    border-radius: 12px;
+    width: 725px; max-width: 92vw;
+    max-height: 85vh; overflow-y: auto;
+    padding: 22px 24px 24px;
+    position: relative;
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.3s ease;
+  }
+  .modal-overlay.active .modal-popup {
+    transform: translateY(0) scale(1);
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 17px; height: 17px;
+    background: none; border: none; cursor: pointer;
+    padding: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-close svg { width: 12px; height: 12px; }
+  .modal-close:hover { opacity: 0.6; }
+  .modal-label-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .modal-label-row .c-icon {
+    width: 24.43px; height: 24.43px; border-radius: 5px;
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-label-row .c-label {
+    font-family: 'Simplon Mono', monospace;
+    font-size: 10.4px; font-weight: 400;
+    letter-spacing: 1.04px; text-transform: uppercase;
+    color: #262626;
+  }
+  .modal-title {
+    font-family: 'Safiro', sans-serif;
+    font-size: 18.4px; font-weight: 700;
+    line-height: 22px; color: #262626;
+    letter-spacing: 0px;
+  }
+  .modal-desc {
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; font-weight: 400;
+    line-height: 20.34px; color: #262626;
+    margin-top: 4px;
+  }
+  .modal-line {
+    width: 100%; height: 1px;
+    background: rgba(26,26,26,0.1);
+    margin: 16px 0;
+  }
+  .modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; align-items: start;
+  }
+  .modal-body p {
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; line-height: 20.34px;
+    color: #262626;
+  }
+  .modal-body p + p { margin-top: 14px; }
+  .modal-body strong { font-weight: 700; }
+  .modal-images { display: flex; flex-direction: column; gap: 8px; }
+  .modal-img-placeholder {
+    width: 100%; aspect-ratio: 5/3;
+    background: #d9d9d9; border-radius: 0;
+  }
+  .modal-img-row { display: flex; gap: 8px; }
+  .modal-img-row .modal-img-placeholder { flex: 1; aspect-ratio: 4/3; }
+  .modal-footer {
+    display: flex; justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .modal-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #262626; color: #F5F3EE;
+    font-family: 'Simplon Mono', monospace;
+    font-size: 10.4px; font-weight: 700;
+    letter-spacing: 1.04px; text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 12px; border: none;
+    text-decoration: none; cursor: pointer;
+    height: 36.55px;
+  }
+  .modal-btn:hover { opacity: 0.85; }
+
+  /* ── Bar chart (Figma: mix-blend-multiply) ── */
+  .bar-chart { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; padding-left: 0; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar-label {
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; font-weight: 400;
+    line-height: 20.34px;
+    width: 110px; text-align: right; flex-shrink: 0;
+    color: var(--grey-10);
+  }
+  .bar-track { flex: 1; height: 30px; }
+  .bar-fill {
+    height: 100%; border-radius: 0;
+    background: var(--yellow);
+    mix-blend-mode: multiply;
+  }
+  .bar-value {
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; font-weight: 700;
+    line-height: 20.34px;
+    color: var(--grey-10);
+    flex-shrink: 0; width: 24px;
+  }
+
+  /* ── Progress ring ── */
+  .progress-ring { display: flex; justify-content: center; align-items: center; margin-top: 20px; }
+  .progress-ring svg { width: 100%; max-width: 360px; }
+
+  /* ── Placeholders ── */
+  .c-placeholder {
+    width: 100%; border-radius: var(--r-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Safiro', sans-serif;
+    font-size: 13.1px; font-weight: 400;
+    margin-top: 14px; padding: 16px;
+  }
+  .c-img {
+    width: 100%; aspect-ratio: 16/9; border-radius: var(--r-sm);
+    background: rgba(245,243,238,0.04); border: 1px dashed rgba(245,243,238,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 12px; margin-top: 14px;
+  }
+
+  /* ── Lists ── */
+  .c-list { list-style: none; padding: 0; margin-top: 12px; }
+  .c-list li {
+    padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 13.1px; display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .c-list li:last-child { border-bottom: none; }
+  .c-list-meta { color: #262626; font-size: 11px; flex-shrink: 0; margin-left: 12px; }
+
+  /* ── Link ── */
+  .c-link {
+    display: inline-block; margin-top: 12px;
+    font-size: 12px; text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .c-link:hover { opacity: 0.7; }
+
+  /* ═══ FOOTER ═══ */
+  .footer { padding: 72px 0 40px; text-align: center; font-size: 13px; color: var(--text-muted); background: var(--paper); }
+  .footer a { color: #262626; text-decoration: none; border-bottom: 1px solid rgba(38,38,38,0.15); }
+  .footer a:hover { color: #262626; opacity: 0.7; }
+
+  /* ═══ ANIMATION ═══ */
+  .card { opacity: 0; transform: translateY(16px); }
+  .card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.45s ease, transform 0.45s ease; }
+  .card.visible.card--click:hover { transform: translateY(-2px); }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 900px) {
+    .hero-body { grid-template-columns: 1fr; gap: 24px; }
+    .hero h1 { font-size: 40px; line-height: 44px; }
+    .section-grid { grid-template-columns: 1fr; }
+    .modal-popup { width: 95vw; }
+    .modal-body { grid-template-columns: 1fr; }
+    .card--full { grid-column: span 1; }
+    .chapter-header-top { flex-direction: column; align-items: flex-start; }
+    .chapter-header-bottom { flex-direction: column; }
+    .ch-tags-area { text-align: left; }
+    .c-tags { justify-content: flex-start; }
+    .ch-num, .ch-title { font-size: 32px; line-height: 36px; }
+    .c-expand-tab { display: none; }
+    .modal-img-row { flex-direction: column; }
+    .tab-btn { flex: 1; }
+  }
+  @media (max-width: 540px) {
+    .hero { padding: 40px 0 24px; }
+    .hero h1 { font-size: 32px; line-height: 36px; }
+    .card-split { grid-template-columns: 1fr; }
+    .ch-num, .ch-title { font-size: 28px; line-height: 32px; }
+    .tab-panel { padding: 24px 24px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="page">
+    <div class="hero-logo"><img src="parabole-logo.svg" alt="Parabole"></div>
+    <div class="hero-body">
+      <h1>Impact report '24-'25</h1>
+      <div class="hero-right">
+        <p>Parabole is a communications studio built entirely around data storytelling. We work with mission-driven organisations and select private-sector partners to turn data into narratives that drive decisions—from editorial strategy to final production.</p>
+        <p><strong>This is our impact report for 2024–2025: two years of turning valuable data into real-world influence.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TAB ROW ═══════════ -->
+<div class="tab-row">
+  <div class="tab-row-inner">
+    <button class="tab-btn active" onclick="switchTab(0)">01 CREATE</button>
+    <button class="tab-btn" onclick="switchTab(1)">02 CONNECT</button>
+    <button class="tab-btn" onclick="switchTab(2)">03 CONVERGE</button>
+  </div>
+</div>
+
+<!-- ═══════════ CONTENT ZONE ═══════════ -->
+<div class="content-zone">
+
+  <!-- ═══════════ TAB 0: CREATE ═══════════ -->
+  <div class="tab-panel active">
+    <div class="page">
+      <h2 class="chapter-title">CREATE</h2>
+
+      <div class="chapter-header">
+        <div class="chapter-header-bottom">
+          <p class="ch-intro">Every project starts with data that's locked in a spreadsheet, a technical report or an internal system. Here's what we did with it.</p>
+          <div class="ch-tags-area">
+            <div class="ch-tags-label">Sectors</div>
+            <div class="c-tags">
+              <span class="c-tag">Non-profit</span>
+              <span class="c-tag">International Development</span>
+              <span class="c-tag">Human Rights</span>
+              <span class="c-tag">Tech</span>
+              <span class="c-tag">Public Policy</span>
+              <span class="c-tag">Health</span>
+              <span class="c-tag">Finance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-grid">
+
+        <!-- LEFT: Reach (yellow, tall — spans 3 rows) -->
+        <div class="card card--yellow" style="grid-row: span 3; overflow: clip;">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: #f9efc3;"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">reach</span>
+          </div>
+          <div class="card-split">
+            <div>
+              <div class="c-stat" style="color: #262626;">50</div>
+              <div class="c-headline" style="margin-top:4px; color: #262626;">projects</div>
+            </div>
+            <div class="c-detail" style="margin-top:0; color: rgba(26,26,26,0.5);">50 projects across non-profit, tech, public policy, health and more. From one-off microsites to multi-year strategic partnerships, here's what we worked on.</div>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">Trainings</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">18</span></div>
+            <div class="bar-row"><span class="bar-label">Microsites</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="bar-value">13</span></div>
+            <div class="bar-row"><span class="bar-label">Infographics</span><div class="bar-track"><div class="bar-fill" style="width:44%"></div></div><span class="bar-value">8</span></div>
+            <div class="bar-row"><span class="bar-label">Reports</span><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><span class="bar-value">5</span></div>
+            <div class="bar-row"><span class="bar-label">Strategy</span><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div><span class="bar-value">4</span></div>
+            <div class="bar-row"><span class="bar-label">Platforms</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><span class="bar-value">3</span></div>
+          </div>
+        </div>
+
+        <!-- RIGHT 1: DEI Progress Report (cool gray) -->
+        <div class="card card--click card--cool-gray" onclick="openPopup('dei')">
+          <div class="c-expand-tab" style="background: #c9cecd;">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--lake);"><svg viewBox="0 0 16 17" fill="none"><path d="M15.3282 7.87065L8.31775 14.8811C7.45892 15.7399 6.2941 16.2224 5.07953 16.2224C3.86496 16.2224 2.70014 15.7399 1.84131 14.8811C0.982485 14.0222 0.5 12.8574 0.5 11.6428C0.5 10.4283 0.982485 9.26346 1.84131 8.40463L8.85173 1.39421C9.42428 0.821657 10.2008 0.5 11.0105 0.5C11.8203 0.5 12.5968 0.821657 13.1694 1.39421C13.7419 1.96676 14.0636 2.74331 14.0636 3.55302C14.0636 4.36273 13.7419 5.13928 13.1694 5.71183L6.15131 12.7223C6.00956 12.864 5.84128 12.9764 5.65607 13.0532C5.47087 13.1299 5.27237 13.1694 5.0719 13.1694C4.87144 13.1694 4.67294 13.1299 4.48773 13.0532C4.30253 12.9764 4.13425 12.864 3.9925 12.7223C3.85075 12.5805 3.73831 12.4122 3.66159 12.227C3.58488 12.0418 3.54539 11.8433 3.54539 11.6428C3.54539 11.4424 3.58488 11.2439 3.66159 11.0587C3.73831 10.8735 3.85075 10.7052 3.9925 10.5634L10.4689 4.09463" stroke="#C9CECD" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">Case study</span>
+          </div>
+          <div class="c-headline" style="color: rgba(38,38,38,0.5);">DEI Progress Report</div>
+          <div class="c-detail" style="color: var(--grey-10);">We worked with Vinted to bring their data on DEI to life, using a unique storytelling and design approach.</div>
+        </div>
+
+        <!-- RIGHT 2: Trillions Tracker (cool gray) -->
+        <div class="card card--click card--cool-gray" onclick="openPopup('trillions')">
+          <div class="c-expand-tab" style="background: #c9cecd;">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--lake);"><svg viewBox="0 0 16 17" fill="none"><path d="M15.3282 7.87065L8.31775 14.8811C7.45892 15.7399 6.2941 16.2224 5.07953 16.2224C3.86496 16.2224 2.70014 15.7399 1.84131 14.8811C0.982485 14.0222 0.5 12.8574 0.5 11.6428C0.5 10.4283 0.982485 9.26346 1.84131 8.40463L8.85173 1.39421C9.42428 0.821657 10.2008 0.5 11.0105 0.5C11.8203 0.5 12.5968 0.821657 13.1694 1.39421C13.7419 1.96676 14.0636 2.74331 14.0636 3.55302C14.0636 4.36273 13.7419 5.13928 13.1694 5.71183L6.15131 12.7223C6.00956 12.864 5.84128 12.9764 5.65607 13.0532C5.47087 13.1299 5.27237 13.1694 5.0719 13.1694C4.87144 13.1694 4.67294 13.1299 4.48773 13.0532C4.30253 12.9764 4.13425 12.864 3.9925 12.7223C3.85075 12.5805 3.73831 12.4122 3.66159 12.227C3.58488 12.0418 3.54539 11.8433 3.54539 11.6428C3.54539 11.4424 3.58488 11.2439 3.66159 11.0587C3.73831 10.8735 3.85075 10.7052 3.9925 10.5634L10.4689 4.09463" stroke="#C9CECD" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">Case study</span>
+          </div>
+          <div class="c-headline" style="color: rgba(38,38,38,0.5);">The Trillions Tracker</div>
+          <div class="c-detail" style="color: var(--grey-10);">We developed an interactive data visualisation for ONE Campaign to track progress in global financing for People and Planet, launched at the UNGA.</div>
+        </div>
+
+        <!-- RIGHT 3: Trust (light yellow with yellow visual area) -->
+        <div class="card card--light-yellow" style="overflow: clip;">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--yellow);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">trust</span>
+          </div>
+          <div style="display: flex; align-items: stretch; gap: 0;">
+            <div style="flex: 0 0 auto;">
+              <div class="c-stat" style="color: #262626;">63%</div>
+              <div class="c-headline" style="margin-top:2px; color: #262626;">repeat clients</div>
+            </div>
+            <div style="flex: 1; margin-left: 20px; background: var(--yellow); border-radius: 0; display: flex; align-items: center; justify-content: center; min-height: 80px; margin: -22px -24px -22px 20px; padding: 16px;">
+              <span style="font-size: 13.1px; color: var(--grey-10);">Some sort of visual?</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ TAB 1: CONNECT ═══════════ -->
+  <div class="tab-panel">
+    <div class="page">
+      <h2 class="chapter-title">CONNECT</h2>
+
+      <div class="chapter-header">
+        <div class="chapter-header-bottom">
+          <p class="ch-intro">The work doesn't stop at delivery. It ripples outward through the community we're building, the people we teach and the stories we tell without a client brief.</p>
+          <div class="ch-tags-area">
+            <div class="ch-tags-label">Expertise</div>
+            <div class="c-tags">
+              <span class="c-tag">Storytelling</span>
+              <span class="c-tag">Data visualisation</span>
+              <span class="c-tag">Web development</span>
+              <span class="c-tag">UX/UI design</span>
+              <span class="c-tag">Motion &amp; animation</span>
+              <span class="c-tag">Graphic &amp; web design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-grid">
+
+        <!-- LEFT: Network (moss, tall — spans 3 rows) -->
+        <div class="card card--moss" style="grid-row: span 3; overflow: clip;">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--sage);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">network</span>
+          </div>
+          <div class="card-split">
+            <div>
+              <div class="c-stat" style="color: #262626;">14</div>
+              <div class="c-headline" style="margin-top:4px; color: #262626;">countries</div>
+            </div>
+            <div class="c-detail" style="margin-top:0; color: var(--grey-10);">Our partners and collaborators span 14 countries and 6 continents. Each project is shaped by the context it's designed for.</div>
+          </div>
+          <div class="c-placeholder" style="height:160px; margin-top:20px; color: var(--grey-10); background: transparent;">Map</div>
+        </div>
+
+        <!-- RIGHT 1: Training (sage) -->
+        <div class="card card--click card--sage" onclick="openPopup('training')">
+          <div class="c-expand-tab" style="background: var(--sage);">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--moss);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">training</span>
+          </div>
+          <div class="c-stat" style="color: #262626;">540+</div>
+          <div class="c-headline" style="margin-top:2px; color: #262626;">training participants</div>
+        </div>
+
+        <!-- RIGHT 2: Writing (sage) -->
+        <div class="card card--click card--sage" onclick="openPopup('writing')">
+          <div class="c-expand-tab" style="background: var(--sage);">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--moss);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">writing</span>
+          </div>
+          <div class="c-stat" style="color: #262626;">4.1K+</div>
+          <div class="c-headline" style="margin-top:2px; color: #262626;">newsletter subscribers</div>
+        </div>
+
+        <!-- RIGHT 3: Speaking (lake) -->
+        <div class="card card--click card--lake" onclick="openPopup('speaking')">
+          <div class="c-expand-tab" style="background: var(--lake);">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#F5F3EE" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--off-black);"><svg viewBox="0 0 17 17" fill="none"><path d="M12.1141 8.25012C12.1141 9.01655 11.887 9.76576 11.4616 10.403C11.0362 11.0403 10.4316 11.537 9.72413 11.8303C9.01671 12.1236 8.23828 12.2003 7.48729 12.0508C6.7363 11.9013 6.04646 11.5322 5.50503 10.9902C4.96359 10.4483 4.59487 9.75782 4.44548 9.00612C4.2961 8.25442 4.37277 7.47526 4.66579 6.76718C4.95882 6.05909 5.45504 5.45388 6.0917 5.02808C6.72836 4.60227 7.47687 4.375 8.24258 4.375" stroke="#F5F3EE" stroke-linecap="round"/><path d="M9.79156 0.655005C9.29085 0.552702 8.77465 0.501033 8.24297 0.5C3.96653 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96653 16.0005 8.24297 16.0005C12.5194 16.0005 15.9859 12.5307 15.9859 8.25024C15.9849 7.71806 15.9333 7.20138 15.8311 6.7002" stroke="#F5F3EE" stroke-linecap="round"/><path d="M8.26562 8.22168L11.791 4.69299M14.2355 2.31754L13.8073 0.776794C13.7901 0.718097 13.7588 0.66453 13.7161 0.620831C13.6734 0.577132 13.6205 0.54465 13.5623 0.526259C13.504 0.507868 13.4421 0.504134 13.3821 0.51539C13.322 0.526645 13.2657 0.552542 13.218 0.590788C12.1061 1.49989 10.8951 2.72521 11.8839 4.65734C13.877 5.58737 15.0152 4.33338 15.887 3.27857C15.9265 3.22999 15.9532 3.17233 15.9648 3.11082C15.9764 3.0493 15.9724 2.98587 15.9534 2.92624C15.9343 2.86662 15.9007 2.8127 15.8556 2.76934C15.8105 2.72599 15.7553 2.69457 15.695 2.67793L14.2355 2.31754Z" stroke="#F5F3EE" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #F5F3EE;">speaking</span>
+          </div>
+          <div class="c-headline" style="color: #F5F3EE;">On stages and in conversations</div>
+          <div class="c-detail" style="color: #F5F3EE;">We share our experience and knowledge on data communication through talks, panels and podcasts.</div>
+        </div>
+
+      </div>
+
+      <div class="section-grid" style="margin-top: var(--gap);">
+
+        <!-- Pro bono (paper/white) -->
+        <div class="card card--white">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--grey-10);"><svg viewBox="0 0 20 19" fill="none"><path d="M9.86155 7.47624L9.35137 7.9319C9.41699 7.99738 9.49608 8.04953 9.58381 8.08518C9.67153 8.12082 9.76604 8.13921 9.86155 8.13921C9.95707 8.13921 10.0516 8.12082 10.1393 8.08518C10.227 8.04953 10.3061 7.99738 10.3717 7.9319L9.86155 7.47624ZM9.16322 11.775C8.57066 11.3273 7.99683 10.9405 7.53626 10.4433C7.10003 9.97265 6.8192 9.45164 6.8192 8.78228H5.41504C5.41504 9.85785 5.88684 10.6756 6.47846 11.3149C7.04668 11.9277 7.77497 12.4231 8.28515 12.8081L9.16322 11.775ZM6.8192 8.78228C6.8192 8.15178 7.19084 7.64844 7.65327 7.44534C8.06891 7.26343 8.68767 7.26961 9.35137 7.93102L10.3717 7.02147C9.35044 6.00331 8.09699 5.79049 7.06165 6.24438C6.07312 6.67708 5.41504 7.66698 5.41504 8.78228H6.8192ZM8.28515 12.8081C8.47237 12.9494 8.70078 13.1225 8.94042 13.2567C9.17726 13.3892 9.49273 13.5243 9.86155 13.5243V12.1997C9.855 12.1997 9.79696 12.1962 9.65655 12.1176C9.48435 12.0137 9.31955 11.8992 9.16322 11.775L8.28515 12.8081ZM11.438 12.8081C11.9481 12.4231 12.6764 11.9277 13.2447 11.3149C13.8363 10.6764 14.3081 9.85785 14.3081 8.78228H12.9039C12.9039 9.45164 12.6231 9.97265 12.1868 10.4433C11.7263 10.9405 11.1524 11.3264 10.5599 11.775L11.438 12.8081ZM14.3081 8.78228C14.3081 7.66787 13.65 6.67708 12.6615 6.24438C11.6261 5.79049 10.3727 6.00331 9.35137 7.02147L10.3717 7.93102C11.0354 7.26961 11.6542 7.26343 12.0698 7.44534C12.5323 7.64844 12.9039 8.1509 12.9039 8.78228H14.3081ZM10.5599 11.775C10.3596 11.9268 10.206 12.0399 10.0666 12.1176C9.92708 12.1953 9.86811 12.1997 9.86155 12.1997V13.5243C10.2294 13.5243 10.5458 13.3892 10.7836 13.2567C11.0223 13.1225 11.2507 12.9503 11.4389 12.8081L10.5599 11.775Z" fill="#F5F3EE"/><path d="M9.86108 0.5V2.26611M9.86108 16.395V18.1611M0.5 9.33057H2.37222M17.35 9.33057H19.2222M4.24443 14.6289L4.56552 14.326M15.1566 4.33511L15.4777 4.03223M15.4777 14.6289L15.1566 14.326M4.56552 4.33511L4.24443 4.03223" stroke="#F5F3EE" stroke-linecap="round"/></svg></div>
+            <span class="c-label" style="color: var(--grey-10);">pro bono</span>
+          </div>
+          <div class="c-headline" style="color: var(--grey-10);">All datasets deserve a voice</div>
+          <div class="c-detail" style="color: var(--grey-10);">In 2025, we launched Parabole Originals: pro bono data stories on topics that matter but don't get enough attention.</div>
+        </div>
+
+        <!-- Prevention Gap (cool gray) -->
+        <div class="card card--click card--cool-gray" onclick="openPopup('prevention')">
+          <div class="c-expand-tab" style="background: #c9cecd;">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--lake);"><svg viewBox="0 0 16 17" fill="none"><path d="M15.3282 7.87065L8.31775 14.8811C7.45892 15.7399 6.2941 16.2224 5.07953 16.2224C3.86496 16.2224 2.70014 15.7399 1.84131 14.8811C0.982485 14.0222 0.5 12.8574 0.5 11.6428C0.5 10.4283 0.982485 9.26346 1.84131 8.40463L8.85173 1.39421C9.42428 0.821657 10.2008 0.5 11.0105 0.5C11.8203 0.5 12.5968 0.821657 13.1694 1.39421C13.7419 1.96676 14.0636 2.74331 14.0636 3.55302C14.0636 4.36273 13.7419 5.13928 13.1694 5.71183L6.15131 12.7223C6.00956 12.864 5.84128 12.9764 5.65607 13.0532C5.47087 13.1299 5.27237 13.1694 5.0719 13.1694C4.87144 13.1694 4.67294 13.1299 4.48773 13.0532C4.30253 12.9764 4.13425 12.864 3.9925 12.7223C3.85075 12.5805 3.73831 12.4122 3.66159 12.227C3.58488 12.0418 3.54539 11.8433 3.54539 11.6428C3.54539 11.4424 3.58488 11.2439 3.66159 11.0587C3.73831 10.8735 3.85075 10.7052 3.9925 10.5634L10.4689 4.09463" stroke="#C9CECD" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #262626;">Case study</span>
+          </div>
+          <div class="c-headline" style="color: rgba(38,38,38,0.5);">The Prevention Gap</div>
+          <div class="c-detail" style="color: var(--grey-10);">This piece dives into the why and the how of one of the most common fetal anomalies, using a personal story, illustrations and data visualisation.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ TAB 2: CONVERGE ═══════════ -->
+  <div class="tab-panel">
+    <div class="page">
+      <h2 class="chapter-title">CONVERGE</h2>
+
+      <div class="chapter-header">
+        <div class="chapter-header-bottom">
+          <p class="ch-intro">Behind every project is a way of working, and behind that, a bigger ambition. Here's the method, the metric and where we're heading.</p>
+        </div>
+      </div>
+
+      <div class="section-grid" style="margin-bottom: var(--gap);">
+
+        <!-- Full-width: Vision (honey) -->
+        <div class="card card--full card--honey">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--almond);"><svg viewBox="0 0 17 17" fill="none"><path d="M12.1252 8.25012C12.1252 9.01655 11.898 9.76576 11.4722 10.403C11.0464 11.0403 10.4412 11.537 9.73307 11.8303C9.02498 12.1236 8.24583 12.2003 7.49413 12.0508C6.74243 11.9013 6.05194 11.5322 5.51 10.9902C4.96805 10.4483 4.59898 9.75782 4.44946 9.00612C4.29994 8.25442 4.37668 7.47526 4.66998 6.76718C4.96328 6.05909 5.45996 5.45388 6.09722 5.02808C6.73448 4.60227 7.4837 4.375 8.25012 4.375" stroke="#262626" stroke-linecap="round"/><path d="M9.80029 0.655005C9.29911 0.552702 8.78243 0.501033 8.25024 0.5C3.96978 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96978 16.0005 8.25024 16.0005C12.5307 16.0005 16.0005 12.5307 16.0005 8.25024C15.9995 7.71806 15.9478 7.20138 15.8455 6.7002" stroke="#262626" stroke-linecap="round"/><path d="M8.27344 8.22168L11.8021 4.69299M14.2489 2.31754L13.8203 0.776794C13.8032 0.718097 13.7718 0.66453 13.729 0.620831C13.6863 0.577132 13.6334 0.54465 13.5751 0.526259C13.5168 0.507868 13.4548 0.504134 13.3947 0.51539C13.3346 0.526645 13.2782 0.552542 13.2305 0.590788C12.1176 1.49989 10.9054 2.72521 11.8951 4.65734C13.89 5.58737 15.0293 4.33338 15.902 3.27857C15.9415 3.22999 15.9682 3.17233 15.9798 3.11082C15.9914 3.0493 15.9875 2.98587 15.9684 2.92624C15.9493 2.86662 15.9157 2.8127 15.8705 2.76934C15.8254 2.72599 15.7701 2.69457 15.7098 2.67793L14.2489 2.31754Z" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: var(--grey-10);">Vision</span>
+          </div>
+          <div class="c-headline" style="color: var(--grey-10);">We make sure important data reaches the people who need to act on it.</div>
+        </div>
+
+      </div>
+
+      <div class="section-grid">
+
+        <!-- LEFT: North star (almond) -->
+        <div class="card card--almond">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--honey);"><svg viewBox="0 0 18 18" fill="none"><path d="M9.10729 0.569206C9.10729 0.418243 9.04732 0.273463 8.94058 0.166716C8.83383 0.0599697 8.68905 0 8.53809 0C8.38712 0 8.24234 0.0599697 8.1356 0.166716C8.02885 0.273463 7.96888 0.418243 7.96888 0.569206V7.1644L4.51342 3.70743C4.46094 3.65304 4.39815 3.60965 4.32872 3.57978C4.25929 3.54992 4.18461 3.53418 4.10903 3.53349C4.03345 3.5328 3.95849 3.54716 3.88852 3.57575C3.81856 3.60434 3.75499 3.64657 3.70152 3.69999C3.64805 3.75341 3.60575 3.81694 3.5771 3.88688C3.54845 3.95682 3.53401 4.03177 3.53463 4.10735C3.53525 4.18292 3.55092 4.25762 3.58071 4.32708C3.61051 4.39654 3.65385 4.45937 3.70819 4.5119L7.1644 7.96888H0.569206C0.418243 7.96888 0.273463 8.02885 0.166716 8.1356C0.0599697 8.24234 0 8.38712 0 8.53809C0 8.68905 0.0599697 8.83383 0.166716 8.94058C0.273463 9.04732 0.418243 9.10729 0.569206 9.10729H7.1644L3.70819 12.5627C3.60445 12.6701 3.54701 12.8138 3.54823 12.9631C3.54946 13.1123 3.60925 13.2551 3.71474 13.3607C3.82023 13.4663 3.96296 13.5262 4.11221 13.5276C4.26145 13.5289 4.40526 13.4716 4.51266 13.368L7.96888 9.91253V16.507C7.96888 16.6579 8.02885 16.8027 8.1356 16.9095C8.24234 17.0162 8.38712 17.0762 8.53809 17.0762C8.68905 17.0762 8.83383 17.0162 8.94058 16.9095C9.04732 16.8027 9.10729 16.6579 9.10729 16.507V9.91177L12.5627 13.368C12.6701 13.4717 12.8138 13.5292 12.9631 13.5279C13.1123 13.5267 13.2551 13.4669 13.3607 13.3614C13.4663 13.2559 13.5262 13.1132 13.5276 12.964C13.5289 12.8147 13.4716 12.6709 13.368 12.5635L9.91253 9.10729H16.507C16.6579 9.10729 16.8027 9.04732 16.9095 8.94058C17.0162 8.83383 17.0762 8.68905 17.0762 8.53809C17.0762 8.38712 17.0162 8.24234 16.9095 8.1356C16.8027 8.02885 16.6579 7.96888 16.507 7.96888H9.91177L13.368 4.51342C13.4224 4.46094 13.4658 4.39815 13.4956 4.32872C13.5255 4.25929 13.5412 4.18461 13.5419 4.10903C13.5426 4.03345 13.5283 3.95849 13.4997 3.88852C13.4711 3.81856 13.4288 3.75499 13.3754 3.70152C13.322 3.64805 13.2585 3.60575 13.1885 3.5771C13.1186 3.54845 13.0436 3.53401 12.9681 3.53463C12.8925 3.53525 12.8178 3.55092 12.7483 3.58071C12.6789 3.61051 12.616 3.65385 12.5635 3.70819L9.10729 7.16364V0.569206Z" fill="#262626"/></svg></div>
+            <span class="c-label" style="color: var(--grey-10);">North star</span>
+          </div>
+          <div class="card-split">
+            <div>
+              <div class="c-stat" style="color: var(--grey-10);">30</div>
+              <div class="c-headline" style="margin-top:2px; color: var(--grey-10);">datasets</div>
+            </div>
+            <div class="c-detail" style="margin-top:0; color: rgba(38,38,38,0.5);">We're setting ourselves a goal: unlock 30 datasets every two years. Each one of them should go from inaccessible to understood by the people who need it.</div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Progress (almond, tall — spans 3 rows) -->
+        <div class="card card--almond" style="grid-row: span 3; overflow: clip;">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--honey);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: var(--grey-10);">progress</span>
+          </div>
+          <div class="card-split">
+            <div>
+              <div class="c-stat" style="color: var(--grey-10);">27<span class="c-stat-unit">/30</span></div>
+              <div class="c-headline" style="margin-top:2px; color: var(--grey-10);">datasets unlocked</div>
+            </div>
+            <div class="c-detail" style="margin-top:0; color: rgba(38,38,38,0.5);">In 2024–2025, we unlocked 27 datasets across 7 sectors. That's how we measured up against our first north-star target of 30, and where we'll be building from next.</div>
+          </div>
+          <div class="progress-ring" id="progressRing"></div>
+        </div>
+
+        <!-- LEFT: Approach (paper) -->
+        <div class="card card--click" style="background: #F5F3EE; color: var(--grey-10);" onclick="openPopup('approach')">
+          <div class="c-expand-tab c-expand-tab--left" style="background: #F5F3EE;">
+            <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+          </div>
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--grey-10);"><svg viewBox="0 0 17 17" fill="none"><path d="M12.1252 8.25012C12.1252 9.01655 11.898 9.76576 11.4722 10.403C11.0464 11.0403 10.4412 11.537 9.73307 11.8303C9.02498 12.1236 8.24583 12.2003 7.49413 12.0508C6.74243 11.9013 6.05194 11.5322 5.51 10.9902C4.96805 10.4483 4.59898 9.75782 4.44946 9.00612C4.29994 8.25442 4.37668 7.47526 4.66998 6.76718C4.96328 6.05909 5.45996 5.45388 6.09722 5.02808C6.73448 4.60227 7.4837 4.375 8.25012 4.375" stroke="#F5F3EE" stroke-linecap="round"/><path d="M9.80029 0.655005C9.29911 0.552702 8.78243 0.501033 8.25024 0.5C3.96978 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96978 16.0005 8.25024 16.0005C12.5307 16.0005 16.0005 12.5307 16.0005 8.25024C15.9995 7.71806 15.9478 7.20138 15.8455 6.7002" stroke="#F5F3EE" stroke-linecap="round"/><path d="M8.27344 8.22168L11.8021 4.69299M14.2489 2.31754L13.8203 0.776794C13.8032 0.718097 13.7718 0.66453 13.729 0.620831C13.6863 0.577132 13.6334 0.54465 13.5751 0.526259C13.5168 0.507868 13.4548 0.504134 13.3947 0.51539C13.3346 0.526645 13.2782 0.552542 13.2305 0.590788C12.1176 1.49989 10.9054 2.72521 11.8951 4.65734C13.89 5.58737 15.0293 4.33338 15.902 3.27857C15.9415 3.22999 15.9682 3.17233 15.9798 3.11082C15.9914 3.0493 15.9875 2.98587 15.9684 2.92624C15.9493 2.86662 15.9157 2.8127 15.8705 2.76934C15.8254 2.72599 15.7701 2.69457 15.7098 2.67793L14.2489 2.31754Z" stroke="#F5F3EE" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: var(--grey-10);">Approach</span>
+          </div>
+          <div class="c-headline" style="color: var(--grey-10);">Strategy first, execution second</div>
+          <div class="c-detail" style="color: var(--grey-10);">Every project starts with a question: who needs to understand this, and what should change as a result?</div>
+        </div>
+
+        <!-- LEFT: Milestone (lake/dark) -->
+        <div class="card card--lake">
+          <div class="c-label-row">
+            <div class="c-icon" style="background: var(--off-black);"><svg viewBox="0 0 17 17" fill="none"><path d="M12.1141 8.25012C12.1141 9.01655 11.887 9.76576 11.4616 10.403C11.0362 11.0403 10.4316 11.537 9.72413 11.8303C9.01671 12.1236 8.23828 12.2003 7.48729 12.0508C6.7363 11.9013 6.04646 11.5322 5.50503 10.9902C4.96359 10.4483 4.59487 9.75782 4.44548 9.00612C4.2961 8.25442 4.37277 7.47526 4.66579 6.76718C4.95882 6.05909 5.45504 5.45388 6.0917 5.02808C6.72836 4.60227 7.47687 4.375 8.24258 4.375" stroke="#F5F3EE" stroke-linecap="round"/><path d="M9.79156 0.655005C9.29085 0.552702 8.77465 0.501033 8.24297 0.5C3.96653 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96653 16.0005 8.24297 16.0005C12.5194 16.0005 15.9859 12.5307 15.9859 8.25024C15.9849 7.71806 15.9333 7.20138 15.8311 6.7002" stroke="#F5F3EE" stroke-linecap="round"/><path d="M8.26562 8.22168L11.791 4.69299M14.2355 2.31754L13.8073 0.776794C13.7901 0.718097 13.7588 0.66453 13.7161 0.620831C13.6734 0.577132 13.6205 0.54465 13.5623 0.526259C13.504 0.507868 13.4421 0.504134 13.3821 0.51539C13.322 0.526645 13.2657 0.552542 13.218 0.590788C12.1061 1.49989 10.8951 2.72521 11.8839 4.65734C13.877 5.58737 15.0152 4.33338 15.887 3.27857C15.9265 3.22999 15.9532 3.17233 15.9648 3.11082C15.9764 3.0493 15.9724 2.98587 15.9534 2.92624C15.9343 2.86662 15.9007 2.8127 15.8556 2.76934C15.8105 2.72599 15.7553 2.69457 15.695 2.67793L14.2355 2.31754Z" stroke="#F5F3EE" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="c-label" style="color: #F5F3EE;">Milestone</span>
+          </div>
+          <div class="c-headline" style="color: #F5F3EE;">Parabole Austin</div>
+          <div class="c-detail" style="color: #F5F3EE;">We've established a subsidiary in the US. It signals something we've been building toward: a company that operates internationally by design, not by accident.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <div class="footer">
+    <div class="page">
+      <p>&copy; 2026 Parabole Studio &middot; <a href="https://www.parabole.studio" target="_blank">parabole.studio</a></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ MODAL OVERLAY ═══════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closePopup(event)">
+  <div class="modal-popup" id="modalPopup">
+    <button class="modal-close" onclick="closePopup(event, true)">
+      <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.5"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>
+    </button>
+    <div class="modal-label-row">
+      <div class="c-icon" style="background: var(--lake);" id="modalIcon"><svg viewBox="0 0 16 17" fill="none"><path d="M15.3282 7.87065L8.31775 14.8811C7.45892 15.7399 6.2941 16.2224 5.07953 16.2224C3.86496 16.2224 2.70014 15.7399 1.84131 14.8811C0.982485 14.0222 0.5 12.8574 0.5 11.6428C0.5 10.4283 0.982485 9.26346 1.84131 8.40463L8.85173 1.39421C9.42428 0.821657 10.2008 0.5 11.0105 0.5C11.8203 0.5 12.5968 0.821657 13.1694 1.39421C13.7419 1.96676 14.0636 2.74331 14.0636 3.55302C14.0636 4.36273 13.7419 5.13928 13.1694 5.71183L6.15131 12.7223C6.00956 12.864 5.84128 12.9764 5.65607 13.0532C5.47087 13.1299 5.27237 13.1694 5.0719 13.1694C4.87144 13.1694 4.67294 13.1299 4.48773 13.0532C4.30253 12.9764 4.13425 12.864 3.9925 12.7223C3.85075 12.5805 3.73831 12.4122 3.66159 12.227C3.58488 12.0418 3.54539 11.8433 3.54539 11.6428C3.54539 11.4424 3.58488 11.2439 3.66159 11.0587C3.73831 10.8735 3.85075 10.7052 3.9925 10.5634L10.4689 4.09463" stroke="#C9CECD" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="c-label" id="modalLabel">Case study</span>
+    </div>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-desc" id="modalDesc"></div>
+    <div class="modal-line"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SCRIPT ═══════════ -->
+<script>
+  // ── Icon SVGs ──
+  var icons = {
+    casestudy: '<svg viewBox="0 0 16 17" fill="none"><path d="M15.3282 7.87065L8.31775 14.8811C7.45892 15.7399 6.2941 16.2224 5.07953 16.2224C3.86496 16.2224 2.70014 15.7399 1.84131 14.8811C0.982485 14.0222 0.5 12.8574 0.5 11.6428C0.5 10.4283 0.982485 9.26346 1.84131 8.40463L8.85173 1.39421C9.42428 0.821657 10.2008 0.5 11.0105 0.5C11.8203 0.5 12.5968 0.821657 13.1694 1.39421C13.7419 1.96676 14.0636 2.74331 14.0636 3.55302C14.0636 4.36273 13.7419 5.13928 13.1694 5.71183L6.15131 12.7223C6.00956 12.864 5.84128 12.9764 5.65607 13.0532C5.47087 13.1299 5.27237 13.1694 5.0719 13.1694C4.87144 13.1694 4.67294 13.1299 4.48773 13.0532C4.30253 12.9764 4.13425 12.864 3.9925 12.7223C3.85075 12.5805 3.73831 12.4122 3.66159 12.227C3.58488 12.0418 3.54539 11.8433 3.54539 11.6428C3.54539 11.4424 3.58488 11.2439 3.66159 11.0587C3.73831 10.8735 3.85075 10.7052 3.9925 10.5634L10.4689 4.09463" stroke="#C9CECD" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    reach: '<svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    speaking: '<svg viewBox="0 0 17 17" fill="none"><path d="M12.1141 8.25012C12.1141 9.01655 11.887 9.76576 11.4616 10.403C11.0362 11.0403 10.4316 11.537 9.72413 11.8303C9.01671 12.1236 8.23828 12.2003 7.48729 12.0508C6.7363 11.9013 6.04646 11.5322 5.50503 10.9902C4.96359 10.4483 4.59487 9.75782 4.44548 9.00612C4.2961 8.25442 4.37277 7.47526 4.66579 6.76718C4.95882 6.05909 5.45504 5.45388 6.0917 5.02808C6.72836 4.60227 7.47687 4.375 8.24258 4.375" stroke="#F5F3EE" stroke-linecap="round"/><path d="M9.79156 0.655005C9.29085 0.552702 8.77465 0.501033 8.24297 0.5C3.96653 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96653 16.0005 8.24297 16.0005C12.5194 16.0005 15.9859 12.5307 15.9859 8.25024C15.9849 7.71806 15.9333 7.20138 15.8311 6.7002" stroke="#F5F3EE" stroke-linecap="round"/><path d="M8.26562 8.22168L11.791 4.69299M14.2355 2.31754L13.8073 0.776794C13.7901 0.718097 13.7588 0.66453 13.7161 0.620831C13.6734 0.577132 13.6205 0.54465 13.5623 0.526259C13.504 0.507868 13.4421 0.504134 13.3821 0.51539C13.322 0.526645 13.2657 0.552542 13.218 0.590788C12.1061 1.49989 10.8951 2.72521 11.8839 4.65734C13.877 5.58737 15.0152 4.33338 15.887 3.27857C15.9265 3.22999 15.9532 3.17233 15.9648 3.11082C15.9764 3.0493 15.9724 2.98587 15.9534 2.92624C15.9343 2.86662 15.9007 2.8127 15.8556 2.76934C15.8105 2.72599 15.7553 2.69457 15.695 2.67793L14.2355 2.31754Z" stroke="#F5F3EE" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    approach: '<svg viewBox="0 0 17 17" fill="none"><path d="M12.1252 8.25012C12.1252 9.01655 11.898 9.76576 11.4722 10.403C11.0464 11.0403 10.4412 11.537 9.73307 11.8303C9.02498 12.1236 8.24583 12.2003 7.49413 12.0508C6.74243 11.9013 6.05194 11.5322 5.51 10.9902C4.96805 10.4483 4.59898 9.75782 4.44946 9.00612C4.29994 8.25442 4.37668 7.47526 4.66998 6.76718C4.96328 6.05909 5.45996 5.45388 6.09722 5.02808C6.73448 4.60227 7.4837 4.375 8.25012 4.375" stroke="#F5F3EE" stroke-linecap="round"/><path d="M9.80029 0.655005C9.29911 0.552702 8.78243 0.501033 8.25024 0.5C3.96978 0.5 0.5 3.96978 0.5 8.25024C0.5 12.5307 3.96978 16.0005 8.25024 16.0005C12.5307 16.0005 16.0005 12.5307 16.0005 8.25024C15.9995 7.71806 15.9478 7.20138 15.8455 6.7002" stroke="#F5F3EE" stroke-linecap="round"/><path d="M8.27344 8.22168L11.8021 4.69299M14.2489 2.31754L13.8203 0.776794C13.8032 0.718097 13.7718 0.66453 13.729 0.620831C13.6863 0.577132 13.6334 0.54465 13.5751 0.526259C13.5168 0.507868 13.4548 0.504134 13.3947 0.51539C13.3346 0.526645 13.2782 0.552542 13.2305 0.590788C12.1176 1.49989 10.9054 2.72521 11.8951 4.65734C13.89 5.58737 15.0293 4.33338 15.902 3.27857C15.9415 3.22999 15.9682 3.17233 15.9798 3.11082C15.9914 3.0493 15.9875 2.98587 15.9684 2.92624C15.9493 2.86662 15.9157 2.8127 15.8705 2.76934C15.8254 2.72599 15.7701 2.69457 15.7098 2.67793L14.2489 2.31754Z" stroke="#F5F3EE" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
+
+  // ── Popup data for each expandable card ──
+  var popupData = {
+    dei: {
+      label: 'Case study',
+      icon: icons.casestudy,
+      iconBg: 'var(--lake)',
+      popupBg: '#c9cecd',
+      title: 'DEI Progress Report',
+      desc: 'We worked with Vinted to bring their data on DEI to life, using a unique storytelling and design approach.',
+      body: '<div><p><strong>Background:</strong> Vinted needed to publish workforce diversity data in a way that held up to public scrutiny, without flattening the nuance or turning complexity into corporate platitudes. We designed the full report, working closely with the DEI team to find a visual language that captured Vinted\u2019s voice while treating sensitive data with care.</p><p><strong>Impact:</strong> The report is now used across the company for stakeholder communication and internal transparency. The client called it a \u201ccaptivating design\u201d that \u201cperfectly captures Vinted\u2019s voice.\u201d</p></div><div class="modal-images"><img src="dei-case-study.jpg" alt="DEI Progress Report" style="width:100%;border-radius:8px;"></div>',
+      link: 'https://www.parabole.studio/project/dei-progress-report'
+    },
+    trillions: {
+      label: 'Case study',
+      icon: icons.casestudy,
+      iconBg: 'var(--lake)',
+      popupBg: '#c9cecd',
+      title: 'The Trillions Tracker',
+      desc: 'We developed an interactive data visualisation for ONE Campaign to track progress in global financing for People and Planet, launched at the UNGA.',
+      body: '<div><p><strong>Background:</strong> Tracking global progress on development financing is notoriously messy: different data sources, inconsistent reporting, huge figures with little context. The ONE Campaign spent months consolidating the numbers into a coherent picture and needed a way to present it that could work both on stage at the UN General Assembly and online for a global audience.</p><p><strong>Impact:</strong> We designed the full visual experience, from an animated interactive graphic for the web to a printed handout with QR code for UNGA attendees. The Trillions Tracker was presented live at UNGA in September 2024 to mark ONE Campaign\u2019s 20th anniversary.</p></div><div class="modal-images"><img src="trillions-case-study.jpg" alt="The Trillions Tracker" style="width:100%;border-radius:8px;"></div>',
+      link: 'https://www.parabole.studio/project/the-trillions-tracker'
+    },
+    writing: {
+      label: 'Writing',
+      icon: icons.reach,
+      iconBg: 'var(--moss)',
+      popupBg: '#e1e6d7',
+      title: '4.1K+ newsletter subscribers',
+      desc: '<a href="https://www.theplot.media/" target="_blank" style="color:#262626;text-decoration:none;border-bottom:1px solid rgba(38,38,38,0.3);">The Plot</a>, our newsletter on data communication, covers topics from chart design to narrative strategy. Here are three reader favourites.',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://www.theplot.media/p/10000-hours" target="_blank" style="color:#262626;text-decoration:none;">10,000 hours</a><span class="c-list-meta" style="color:#262626;">May 2025</span></li><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://www.theplot.media/p/tipsforbeginners" target="_blank" style="color:#262626;text-decoration:none;">The tips I give to people starting in dataviz</a><span class="c-list-meta" style="color:#262626;">Sep 2022</span></li><li><a href="https://www.theplot.media/p/qualitative-data" target="_blank" style="color:#262626;text-decoration:none;">Data without numbers</a><span class="c-list-meta" style="color:#262626;">Apr 2025</span></li></ul></div>',
+      link: null
+    },
+    speaking: {
+      label: 'Speaking',
+      icon: icons.speaking,
+      iconBg: 'var(--off-black)',
+      popupBg: '#4A5150',
+      dark: true,
+      title: 'On stages and in conversations',
+      desc: 'We share our experience and knowledge on data communication through talks, panels and podcasts.',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list" style="color:#262626;"><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://2coconference.org/2024/program/" target="_blank" style="color:inherit;text-decoration:none;">Talk at 2CO4 Barcelona: Measure to change</a><span class="c-list-meta">July 2024</span></li><li><a href="https://visualisingdata.com/2024/12/explore-explain-s5-e7-e8-the-state-of-data-viz-special-webinar/" target="_blank" style="color:inherit;text-decoration:none;">Explore Explain Podcast: State of Data Viz</a><span class="c-list-meta">Dec 2024</span></li></ul></div>',
+      link: null
+    },
+    training: {
+      label: 'Training',
+      icon: icons.reach,
+      iconBg: 'var(--moss)',
+      popupBg: '#e1e6d7',
+      title: '540+ training participants',
+      desc: 'We equip teams to own their organisation\u2019s data narrative. We ran workshops across UN agencies, tech companies, and NGOs, plus a public cohort on Maven.',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li style="border-bottom-color:rgba(38,38,38,0.08);"><span>Public data storytelling bootcamp</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">Maven</span></li><li style="border-bottom-color:rgba(38,38,38,0.08);"><span>Data visualisation for public policy</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">Sciences Po</span></li><li><span>Private data storytelling trainings</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">10+ clients</span></li></ul></div>',
+      link: null
+    },
+    prevention: {
+      label: 'Case study',
+      icon: icons.casestudy,
+      iconBg: 'var(--lake)',
+      popupBg: '#c9cecd',
+      title: 'The Prevention Gap',
+      desc: 'This piece dives into the why and the how of one of the most common fetal anomalies, using a personal story, illustrations and data visualisation.',
+      body: '<div><p><strong>Background:</strong> Up to 1 in 1,000 pregnancies are affected by spina bifida, yet most people have never heard of it. The risk can be significantly reduced through folic acid supplementation, but policy and awareness haven\u2019t kept pace.</p><p><strong>Impact:</strong> This is the first Parabole Original. We used personal storytelling, illustration and data to make the case for prevention, reaching 2k+ views across 50+ countries.</p></div><div class="modal-images"><img src="prevention-case-study.jpg" alt="The Prevention Gap" style="width:100%;border-radius:8px;"></div>',
+      link: 'https://www.parabole.studio/project/the-prevention-gap'
+    },
+    approach: {
+      label: 'Approach',
+      icon: icons.approach,
+      iconBg: 'var(--grey-10)',
+      popupBg: '#F5F3EE',
+      title: 'Strategy first, execution second',
+      desc: 'Every project starts with a question: who needs to understand this, and what should change as a result?',
+      body: '<div style="grid-column:1/-1;"><p>We split every engagement into two clear stages. First, we define the narrative strategy: the audience, the key message, the right format, the editorial angle. Only once that\u2019s agreed do we move into production.</p><p>This is what makes us a strategic partner rather than a production studio. We\u2019re in the room when the brief is being shaped, not just when the design is being made. That early involvement is where the most important decisions happen.</p></div>',
+      link: null
+    }
+  };
+
+  function switchTab(index) {
+    document.querySelectorAll('.tab-btn').forEach(function(btn, i) {
+      btn.classList.toggle('active', i === index);
+    });
+    document.querySelectorAll('.tab-panel').forEach(function(panel, i) {
+      panel.classList.toggle('active', i === index);
+      if (i === index) {
+        // Re-observe cards for animation
+        panel.querySelectorAll('.card:not(.visible)').forEach(function(card) {
+          obs.observe(card);
+        });
+      }
+    });
+  }
+
+  function openPopup(key) {
+    var d = popupData[key];
+    if (!d) return;
+    var popup = document.getElementById('modalPopup');
+    var isDark = !!d.dark;
+    var textColor = isDark ? '#F5F3EE' : '#262626';
+    var lineColor = isDark ? 'rgba(245,243,238,0.15)' : 'rgba(38,38,38,0.1)';
+    var metaColor = isDark ? 'rgba(245,243,238,0.5)' : '#262626';
+    var borderColor = isDark ? 'rgba(245,243,238,0.08)' : 'rgba(38,38,38,0.08)';
+
+    // Set popup background
+    popup.style.background = d.popupBg || '#c9cecd';
+
+    // Update icon
+    var iconEl = document.getElementById('modalIcon');
+    iconEl.style.background = d.iconBg;
+    iconEl.innerHTML = d.icon;
+
+    // Update text colors
+    var labelEl = document.getElementById('modalLabel');
+    labelEl.textContent = d.label;
+    labelEl.style.color = textColor;
+
+    var titleEl = document.getElementById('modalTitle');
+    titleEl.textContent = d.title;
+    titleEl.style.color = textColor;
+
+    var descEl = document.getElementById('modalDesc');
+    descEl.innerHTML = d.desc;
+    descEl.style.color = textColor;
+
+    document.querySelector('.modal-line').style.background = lineColor;
+
+    // Close button color
+    document.querySelector('.modal-close svg').setAttribute('stroke', textColor);
+
+    // Body content
+    var bodyEl = document.getElementById('modalBody');
+    bodyEl.innerHTML = d.body;
+    // Apply text color to all body paragraphs and list items
+    bodyEl.querySelectorAll('p').forEach(function(p) { p.style.color = textColor; });
+    bodyEl.querySelectorAll('.c-list').forEach(function(ul) { ul.style.color = textColor; });
+    bodyEl.querySelectorAll('.c-list li').forEach(function(li) { li.style.borderBottomColor = borderColor; });
+    bodyEl.querySelectorAll('.c-list-meta').forEach(function(m) { m.style.color = metaColor; });
+
+    // Footer
+    var footer = document.getElementById('modalFooter');
+    if (d.link) {
+      if (isDark) {
+        footer.innerHTML = '<a class="modal-btn" href="' + d.link + '" target="_blank" style="background:#F5F3EE;color:#262626;">View project</a>';
+      } else {
+        footer.innerHTML = '<a class="modal-btn" href="' + d.link + '" target="_blank">View project</a>';
+      }
+      footer.style.display = '';
+    } else {
+      footer.innerHTML = '';
+      footer.style.display = 'none';
+    }
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup(e, force) {
+    if (force || e.target === document.getElementById('modalOverlay')) {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ── Generate circular progress dots (27/30) with star in center ──
+  (function() {
+    const container = document.getElementById('progressRing');
+    if (!container) return;
+    const total = 30, filled = 27;
+    const cx = 180, cy = 180, r = 150, dotR = 10;
+    let svg = '<svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">';
+    for (let i = 0; i < total; i++) {
+      const angle = (-90 + i * (360 / total)) * Math.PI / 180;
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
+      if (i < filled) {
+        svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + dotR + '" fill="#262626"/>';
+      } else {
+        svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + dotR + '" fill="none" stroke="rgba(38,38,38,0.2)" stroke-width="1.5"/>';
+      }
+    }
+    // 8-pointed star in center — 171.46px, thin strokes
+    var sr = 85.73; // half of 171.46
+    svg += '<g stroke="#262626" stroke-width="4" stroke-linecap="round">';
+    for (var a = 0; a < 8; a++) {
+      var ang = a * 45 * Math.PI / 180;
+      var x1 = cx + sr * Math.cos(ang);
+      var y1 = cy + sr * Math.sin(ang);
+      var x2 = cx - sr * Math.cos(ang);
+      var y2 = cy - sr * Math.sin(ang);
+      svg += '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '"/>';
+    }
+    svg += '</g>';
+    svg += '</svg>';
+    container.innerHTML = svg;
+  })();
+
+  // ── Scroll-in animation ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  // Observe cards in active tab only
+  document.querySelectorAll('.tab-panel.active .card').forEach((c, i) => {
+    c.style.transitionDelay = `${(i % 4) * 60}ms`;
+    obs.observe(c);
+  });
+</script>
+</body>
+</html>
