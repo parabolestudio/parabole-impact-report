@@ -242,6 +242,12 @@
     opacity: 0; pointer-events: none;
     transition: opacity 0.3s ease;
   }
+  /* iframe-safe: fall back to absolute positioning when embedded */
+  .modal-overlay.is-iframe {
+    position: absolute;
+    inset: auto;
+    width: 100%; height: 100vh;
+  }
   .modal-overlay.active { opacity: 1; pointer-events: auto; }
   .modal-popup {
     border-radius: 12px;
@@ -950,7 +956,13 @@
       footer.innerHTML = '';
       footer.style.display = 'none';
     }
-    document.getElementById('modalOverlay').classList.add('active');
+    var overlay = document.getElementById('modalOverlay');
+    // When inside an iframe, use absolute positioning anchored to scroll offset
+    if (window.parent !== window) {
+      overlay.classList.add('is-iframe');
+      overlay.style.top = window.scrollY + 'px';
+    }
+    overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
