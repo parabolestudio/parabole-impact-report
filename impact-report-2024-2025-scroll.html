@@ -293,8 +293,8 @@
     margin-top: 4px;
   }
   .modal-line {
-    width: 100%; height: 1px;
-    background: rgba(26,26,26,0.1);
+    width: 100%; height: 0.5px;
+    background: #262626;
     margin: 16px 0;
   }
   .modal-body {
@@ -379,7 +379,7 @@
   /* ── Lists ── */
   .c-list { list-style: none; padding: 0; margin-top: 12px; }
   .c-list li {
-    padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 8px 0; border-bottom: 0.5px solid #262626;
     font-size: 13.1px; display: flex; justify-content: space-between; align-items: baseline;
   }
   .c-list li:last-child { border-bottom: none; }
@@ -440,7 +440,7 @@
 
     /* Fix popup on mobile */
     .modal-overlay {
-      align-items: flex-start;
+      align-items: center;
       padding: 12px;
       overflow-y: auto;
     }
@@ -852,7 +852,7 @@
       popupBg: '#e1e6d7',
       title: '4.1K+ newsletter subscribers',
       desc: '<a href="https://www.theplot.media/" target="_blank" style="color:#262626;text-decoration:none;border-bottom:1px solid rgba(38,38,38,0.3);">The Plot</a>, our newsletter on data communication, covers topics from chart design to narrative strategy. Here are three reader favourites.',
-      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://www.theplot.media/p/10000-hours" target="_blank" style="color:#262626;text-decoration:none;">10,000 hours</a><span class="c-list-meta" style="color:#262626;">May 2025</span></li><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://www.theplot.media/p/tipsforbeginners" target="_blank" style="color:#262626;text-decoration:none;">The tips I give to people starting in dataviz</a><span class="c-list-meta" style="color:#262626;">Sep 2022</span></li><li><a href="https://www.theplot.media/p/qualitative-data" target="_blank" style="color:#262626;text-decoration:none;">Data without numbers</a><span class="c-list-meta" style="color:#262626;">Apr 2025</span></li></ul></div>',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li><a href="https://www.theplot.media/p/10000-hours" target="_blank" style="color:#262626;text-decoration:none;">10,000 hours</a><span class="c-list-meta" style="color:#262626;">May 2025</span></li><li><a href="https://www.theplot.media/p/tipsforbeginners" target="_blank" style="color:#262626;text-decoration:none;">The tips I give to people starting in dataviz</a><span class="c-list-meta" style="color:#262626;">Sep 2022</span></li><li><a href="https://www.theplot.media/p/qualitative-data" target="_blank" style="color:#262626;text-decoration:none;">Data without numbers</a><span class="c-list-meta" style="color:#262626;">Apr 2025</span></li></ul></div>',
       link: null
     },
     speaking: {
@@ -863,7 +863,7 @@
       dark: true,
       title: 'On stages and in conversations',
       desc: 'We share our experience and knowledge on data communication through talks, panels and podcasts.',
-      body: '<div style="grid-column:1/-1;"><ul class="c-list" style="color:#262626;"><li style="border-bottom-color:rgba(38,38,38,0.08);"><a href="https://2coconference.org/2024/program/" target="_blank" style="color:inherit;text-decoration:none;">Talk at 2CO4 Barcelona: Measure to change</a><span class="c-list-meta">July 2024</span></li><li><a href="https://visualisingdata.com/2024/12/explore-explain-s5-e7-e8-the-state-of-data-viz-special-webinar/" target="_blank" style="color:inherit;text-decoration:none;">Explore Explain Podcast: State of Data Viz</a><span class="c-list-meta">Dec 2024</span></li></ul></div>',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li><a href="https://2coconference.org/2024/program/" target="_blank" style="color:inherit;text-decoration:none;">Talk at 2CO4 Barcelona: Measure to change</a><span class="c-list-meta">July 2024</span></li><li><a href="https://visualisingdata.com/2024/12/explore-explain-s5-e7-e8-the-state-of-data-viz-special-webinar/" target="_blank" style="color:inherit;text-decoration:none;">Explore Explain Podcast: State of Data Viz</a><span class="c-list-meta">Dec 2024</span></li></ul></div>',
       link: null
     },
     training: {
@@ -873,7 +873,7 @@
       popupBg: '#e1e6d7',
       title: '540+ training participants',
       desc: 'We equip teams to own their organisation\u2019s data narrative. We ran workshops across UN agencies, tech companies, and NGOs, plus a public cohort on Maven.',
-      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li style="border-bottom-color:rgba(38,38,38,0.08);"><span>Public data storytelling bootcamp</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">Maven</span></li><li style="border-bottom-color:rgba(38,38,38,0.08);"><span>Data visualisation for public policy</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">Sciences Po</span></li><li><span>Private data storytelling trainings</span><span class="c-list-meta" style="color:rgba(38,38,38,0.4);">10+ clients</span></li></ul></div>',
+      body: '<div style="grid-column:1/-1;"><ul class="c-list"><li><span>Public data storytelling bootcamp</span><span class="c-list-meta">Maven</span></li><li><span>Data visualisation for public policy</span><span class="c-list-meta">Sciences Po</span></li><li><span>Private data storytelling trainings</span><span class="c-list-meta">10+ clients</span></li></ul></div>',
       link: null
     },
     prevention: {
@@ -904,9 +904,9 @@
     var popup = document.getElementById('modalPopup');
     var isDark = !!d.dark;
     var textColor = isDark ? '#F5F3EE' : '#262626';
-    var lineColor = isDark ? 'rgba(245,243,238,0.15)' : 'rgba(38,38,38,0.1)';
+    var lineColor = isDark ? 'rgba(245,243,238,0.4)' : '#262626';
     var metaColor = isDark ? 'rgba(245,243,238,0.5)' : '#262626';
-    var borderColor = isDark ? 'rgba(245,243,238,0.08)' : 'rgba(38,38,38,0.08)';
+    var borderColor = isDark ? 'rgba(245,243,238,0.15)' : 'rgba(38,38,38,0.15)';
 
     // Set popup background
     popup.style.background = d.popupBg || '#c9cecd';
