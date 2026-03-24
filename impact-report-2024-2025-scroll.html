@@ -985,6 +985,16 @@
     c.style.transitionDelay = `${(i % 4) * 60}ms`;
     obs.observe(c);
   });
+
+  // ── Post height to parent for iframe auto-resize ──
+  function postHeight() {
+    if (window.parent !== window) {
+      window.parent.postMessage({ height: document.body.scrollHeight }, '*');
+    }
+  }
+  window.addEventListener('load', postHeight);
+  window.addEventListener('resize', postHeight);
+  new MutationObserver(postHeight).observe(document.body, { childList: true, subtree: true });
 </script>
 </body>
 </html>
