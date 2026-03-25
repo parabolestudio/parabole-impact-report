@@ -409,9 +409,15 @@
     .hero h1 { font-size: 40px; line-height: 44px; }
     .section-grid { grid-template-columns: 1fr; }
     .card--full { grid-column: span 1; }
-    .chapter-header-top { flex-direction: column; align-items: flex-start; }
-    .chapter-header-bottom { flex-direction: column; }
-    .ch-tags-area { text-align: left; }
+    /* Stack chapter header: title → description → line → label → tags */
+    .chapter-header { display: flex; flex-direction: column; }
+    .chapter-header-top { display: contents; }
+    .chapter-header-bottom { display: contents; }
+    .ch-title-row { order: 1; margin-bottom: 12px; }
+    .ch-intro { order: 2; max-width: 100%; }
+    .ch-line { order: 3; }
+    .ch-tags-label { order: 4; text-align: left; }
+    .ch-tags-area { order: 5; text-align: left; }
     .c-tags { justify-content: flex-start; }
     .ch-num, .ch-title { font-size: 32px; line-height: 36px; }
     .modal-img-row { flex-direction: column; }
