@@ -53,25 +53,56 @@
   .page { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
   /* ── Hero ── */
-  .hero { padding: 60px 0 40px; }
+  .hero { padding: 60px 0 80px; }
   .hero-logo { margin-bottom: 72px; }
   .hero-logo img { height: 19px; width: auto; }
   .hero-body {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
     align-items: start;
   }
+  .hero-title-wrap { position: relative; }
   .hero h1 {
     font-family: 'Safiro', sans-serif;
-    font-size: 57.6px;
+    font-size: 88px;
     font-weight: 700;
-    line-height: 62.21px;
+    line-height: 92px;
     letter-spacing: 0px;
     text-transform: uppercase;
     color: var(--paper);
   }
-  .hero-right { padding-top: 4px; }
+  .hero-tag {
+    position: absolute;
+    font-family: 'Simplon Mono', monospace;
+    font-size: 10.4px;
+    font-weight: 400;
+    letter-spacing: 1.04px;
+    text-transform: uppercase;
+    color: #262626;
+    border: 1.5px solid #262626;
+    padding: 5px 12px 4px;
+    white-space: nowrap;
+  }
+  .hero-tag--case-studies {
+    background: #B5BCA6;
+    border-radius: 33px;
+    top: -8px; left: 20px;
+    transform: rotate(13.88deg);
+  }
+  .hero-tag--key-figures {
+    background: #E2C641;
+    border-radius: 33px 33px 0 0;
+    bottom: -4px; left: 160px;
+    transform: rotate(10.99deg);
+  }
+  .hero-tag--vision {
+    background: #D0AA71;
+    border-radius: 33px 0 0 33px;
+    top: 22%; left: 59%;
+    transform: rotate(-12.77deg);
+  }
+  .hero-right { padding-top: 4px; display: flex; flex-direction: column; justify-content: flex-end; }
   .hero-right p {
     font-family: 'Safiro', sans-serif;
     font-size: 20px;
@@ -80,7 +111,7 @@
     letter-spacing: 0px;
     color: var(--text-muted);
   }
-  .hero-right p + p { margin-top: 14px; }
+  .hero-right p + p { margin-top: 32px; }
   .hero-right strong {
     font-weight: 700;
     color: var(--text-muted);
@@ -406,7 +437,7 @@
   /* ═══ RESPONSIVE ═══ */
   @media (max-width: 900px) {
     .hero-body { grid-template-columns: 1fr; gap: 24px; }
-    .hero h1 { font-size: 40px; line-height: 44px; }
+    .hero h1 { font-size: 56px; line-height: 60px; }
     .section-grid { grid-template-columns: 1fr; }
     .card--full { grid-column: span 1; }
     /* Stack chapter header: title → description → line → label → tags */
@@ -473,7 +504,7 @@
   }
   @media (max-width: 540px) {
     .hero { padding: 40px 0 24px; }
-    .hero h1 { font-size: 32px; line-height: 36px; }
+    .hero h1 { font-size: 40px; line-height: 44px; }
     .card-split { grid-template-columns: 1fr; }
     .ch-num, .ch-title { font-size: 28px; line-height: 32px; }
   }
@@ -486,16 +517,16 @@
   <section class="hero">
     <div class="hero-logo"><img src="parabole-logo.svg" alt="Parabole"></div>
     <div class="hero-body">
-      <h1>Impact report '24-'25</h1>
+      <div class="hero-title-wrap">
+        <h1>Impact report '24-'25</h1>
+        <span class="hero-tag hero-tag--case-studies">case studies</span>
+        <span class="hero-tag hero-tag--key-figures">key figures</span>
+        <span class="hero-tag hero-tag--vision">vision</span>
+      </div>
       <div class="hero-right">
-        <p>Parabole is a communications studio built entirely around data storytelling. We work with mission-driven organisations and select private-sector partners to turn data into narratives that drive decisions—from editorial strategy to final production.</p>
+        <p>Parabole is a communications studio built entirely around data storytelling. We work with mission-driven organisations and select private-sector partners to turn their valuable data into narratives that drive decisions—from editorial strategy to final production.</p>
         <p><strong>This is our impact report for 2024–2025: two years of turning valuable data into real-world influence.</strong></p>
       </div>
-    </div>
-    <div class="hero-illustration">
-      <svg viewBox="0 0 480 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:480px; opacity:0.2;">
-        <text x="240" y="65" text-anchor="middle" font-family="Simplon Mono, monospace" font-size="11" fill="var(--paper)">[ illustration placeholder ]</text>
-      </svg>
     </div>
   </section>
 
@@ -575,7 +606,8 @@
       </div>
 
       <!-- RIGHT 3: Trust (light yellow with yellow visual area) -->
-      <div class="card card--light-yellow" style="overflow: clip;">
+      <div class="card card--light-yellow" style="overflow: clip; position: relative;">
+        <img src="projects-illustration.svg" alt="" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); width:35%; height:auto; pointer-events:none;">
         <div class="c-label-row">
           <div class="c-icon" style="background: var(--yellow);"><svg viewBox="0 0 17 16" fill="none"><path d="M0.5 12.13H16.4883M16.4883 12.13L13.4136 15.2047M16.4883 12.13L13.4136 9.05533M2.59078 5.74698V0.500366C2.59078 1.22476 2.0029 1.81141 1.27851 1.81141H0.841903M4.33965 5.74821H0.841903M10.243 5.74698H6.74527V5.00168C6.74527 4.48145 7.05274 4.00918 7.53115 3.8001L9.47804 2.94903C9.74584 2.8305 9.96486 2.62364 10.0985 2.36304C10.2321 2.10244 10.2723 1.80387 10.2122 1.51722C10.1522 1.23057 9.99562 0.973206 9.76864 0.788129C9.54166 0.603052 9.25805 0.501474 8.96518 0.500366H8.05631C7.48565 0.500366 6.99862 0.864407 6.81906 1.37357M14.8685 2.90476C15.5942 2.90476 16.1808 3.49263 16.1808 4.21703V4.43594C16.1808 5.16034 15.5929 5.74821 14.8685 5.74821H13.9953C13.4235 5.74821 12.9377 5.38294 12.7569 4.87255" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.9463 1.37505C13.0181 1.12342 13.1699 0.902003 13.3787 0.744249C13.5875 0.586496 13.8419 0.500978 14.1036 0.500615H14.7591C14.9202 0.495461 15.0807 0.522743 15.2311 0.58084C15.3814 0.638936 15.5186 0.726662 15.6344 0.838806C15.7502 0.950949 15.8422 1.08522 15.9051 1.23365C15.968 1.38207 16.0004 1.54162 16.0004 1.70281C16.0004 1.864 15.968 2.02355 15.9051 2.17198C15.8422 2.3204 15.7502 2.45467 15.6344 2.56682C15.5186 2.67896 15.3814 2.76669 15.2311 2.82478C15.0807 2.88288 14.9202 2.91016 14.7591 2.90501H14.6509" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <span class="c-label" style="color: #262626;">trust</span>
@@ -638,7 +670,8 @@
       </div>
 
       <!-- RIGHT 1: Training (sage) -->
-      <div class="card card--click card--sage" onclick="openPopup('training')">
+      <div class="card card--click card--sage" style="position: relative;" onclick="openPopup('training')">
+        <img src="training-illustration.svg" alt="" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); width:35%; height:auto; pointer-events:none;">
         <div class="c-expand-tab" style="background: var(--sage);">
           <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
         </div>
@@ -651,7 +684,8 @@
       </div>
 
       <!-- RIGHT 2: Writing (sage) -->
-      <div class="card card--click card--sage" onclick="openPopup('writing')">
+      <div class="card card--click card--sage" style="position: relative;" onclick="openPopup('writing')">
+        <img src="writing-illustration.svg" alt="" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); width:35%; height:auto; pointer-events:none;">
         <div class="c-expand-tab" style="background: var(--sage);">
           <svg viewBox="0 0 12 12" fill="none" stroke="#262626" stroke-width="1.2"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
         </div>
