@@ -84,35 +84,46 @@
     padding: 5px 12px 4px;
     white-space: nowrap;
   }
-  @keyframes float1 {
-    0%, 100% { transform: rotate(13.88deg) translate(0, 0); }
-    50% { transform: rotate(13.88deg) translate(2px, -3px); }
+  @keyframes wobble1 {
+    0% { transform: rotate(13.88deg); }
+    20% { transform: rotate(17deg); }
+    40% { transform: rotate(11deg); }
+    60% { transform: rotate(16deg); }
+    80% { transform: rotate(12.5deg); }
+    100% { transform: rotate(13.88deg); }
   }
-  @keyframes float2 {
-    0%, 100% { transform: rotate(10.99deg) translate(0, 0); }
-    50% { transform: rotate(10.99deg) translate(-2px, 2px); }
+  @keyframes wobble2 {
+    0% { transform: rotate(10.99deg); }
+    25% { transform: rotate(7deg); }
+    50% { transform: rotate(14deg); }
+    75% { transform: rotate(8.5deg); }
+    100% { transform: rotate(10.99deg); }
   }
-  @keyframes float3 {
-    0%, 100% { transform: rotate(-12.77deg) translate(0, 0); }
-    50% { transform: rotate(-12.77deg) translate(3px, -2px); }
+  @keyframes wobble3 {
+    0% { transform: rotate(-12.77deg); }
+    20% { transform: rotate(-9deg); }
+    45% { transform: rotate(-16deg); }
+    70% { transform: rotate(-10.5deg); }
+    100% { transform: rotate(-12.77deg); }
   }
+  .hero-tag { transform-origin: center center; }
   .hero-tag--case-studies {
     background: #B5BCA6;
     border-radius: 33px;
     top: -8px; left: 20px;
-    animation: float1 4s ease-in-out infinite;
+    animation: wobble1 5s ease-in-out infinite;
   }
   .hero-tag--key-figures {
     background: #E2C641;
     border-radius: 33px 33px 0 0;
     bottom: -4px; left: 160px;
-    animation: float2 5s ease-in-out infinite;
+    animation: wobble2 6s ease-in-out infinite;
   }
   .hero-tag--vision {
     background: #D0AA71;
     border-radius: 33px 0 0 33px;
     top: 22%; left: 59%;
-    animation: float3 4.5s ease-in-out infinite;
+    animation: wobble3 5.5s ease-in-out infinite;
   }
   .hero-right { padding-top: 4px; display: flex; flex-direction: column; justify-content: flex-end; }
   .hero-right p {
