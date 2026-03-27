@@ -53,7 +53,7 @@
   .page { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
   /* ── Hero ── */
-  .hero { padding: 60px 0 80px; }
+  .hero { padding: 60px 0 120px; }
   .hero-logo { margin-bottom: 72px; }
   .hero-logo img { height: 19px; width: auto; }
   .hero-body {
@@ -437,7 +437,8 @@
   /* ═══ RESPONSIVE ═══ */
   @media (max-width: 900px) {
     .hero-body { grid-template-columns: 1fr; gap: 24px; }
-    .hero h1 { font-size: 56px; line-height: 60px; }
+    .hero h1 { font-size: 22vw; line-height: 0.95; }
+    .hero-tag--vision { left: 72% !important; }
     .section-grid { grid-template-columns: 1fr; }
     .card--full { grid-column: span 1; }
     /* Stack chapter header: title → description → line → label → tags */
@@ -504,7 +505,7 @@
   }
   @media (max-width: 540px) {
     .hero { padding: 40px 0 24px; }
-    .hero h1 { font-size: 40px; line-height: 44px; }
+    .hero h1 { font-size: 22vw; line-height: 0.95; }
     .card-split { grid-template-columns: 1fr; }
     .ch-num, .ch-title { font-size: 28px; line-height: 32px; }
   }
@@ -518,7 +519,7 @@
     <div class="hero-logo"><img src="parabole-logo.svg" alt="Parabole"></div>
     <div class="hero-body">
       <div class="hero-title-wrap">
-        <h1>Impact report '24-'25</h1>
+        <h1>Impact<br> report<br> '24-'25</h1>
         <span class="hero-tag hero-tag--case-studies">case studies</span>
         <span class="hero-tag hero-tag--key-figures">key figures</span>
         <span class="hero-tag hero-tag--vision">vision</span>
